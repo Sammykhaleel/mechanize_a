@@ -75,8 +75,8 @@ name, starts_month_day_year, starts_time, ends_month_day_year, ends_time,venue_n
 
 
 Now inside <tt>schedule.rb</tt> we can write this code to trigger cron job to update every one hour
-<tt>every 1.hours do
-  rake "post_event"
-end
-</tt>
+  every 1.hours do
+    rake "post_event"
+  end
+
  

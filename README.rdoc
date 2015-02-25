@@ -20,6 +20,7 @@ I created a task called post_event in <tt>/lib/tasks/event.rake</tt> and i inclu
 
 
 require 'mechanize'
+
 require 'open-uri'
 
 agent = Mechanize.new

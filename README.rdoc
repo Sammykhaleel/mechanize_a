@@ -10,8 +10,8 @@ Tools and basic installation:
 
 In the Gemfile i installed the following
 <tt>gem 'whenever', :require => false</tt>
-</tt>gem 'mechanize'</tt>
-<tt>em 'nokogiri'</tt>
+<tt>gem 'mechanize'</tt>
+<tt>gem 'nokogiri'</tt>
 
 Also make sure to run the command <tt>whenever .</tt> in the terminal to create for us <tt>config/schedule.rb</tt> to allow us to create the cron job that runs every hour.
 
@@ -56,7 +56,7 @@ require 'mechanize'
 
   # We need to upload file in form:
   add_page.form.file_upload.file_name = "./#{path}/#{file_name}"
-  </tt>
+  </tt></br>
 
   What we also need set of tables to represent one of these sites asthey have deferent fields and fields_names let's take example on yelp i created a table and gave it these fields 
   <tt>

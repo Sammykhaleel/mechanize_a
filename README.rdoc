@@ -17,7 +17,46 @@ Also make sure to run the command <tt>whenever .</tt> in the terminal to create 
 
 I created a task called post_event in <tt>/lib/tasks/event.rake</tt> and i included the following as an example using mechanize.
 
+<tt>
 
+require 'mechanize'
+  require 'open-uri'
+
+  agent = Mechanize.new
+
+  #notice here we to call get request to fetch data from the site
+  agent.post("http://www.yelp.com/events/create")
+
+  #once we
+  form = agent.page.forms.first
+  form.email = 'your_email'
+  form.password = 'your_password'
+
+  # The "remember me" checkbox is called "rem" this come handy ecpiecally if we don't 
+  # need to login every time the cron job try to to make a post request.
+  form.checkbox_with('rem').check
+
+  #here is an example of field to fill the venue name.
+  agent.page.forms[0]["venue_name"] = "118st fitness_club"
+
+  #now we can submit the form
+  home_page = form.submit
+
+  # Navigating by links
+  add_page = home_page.link_with(text: 'Add photo').click
+
+  # We need to check first check box check(), to uncheck uncheck():
+  add_page.form.checkbox_with.check
+
+  # We need to check a first radio:
+  add_page.form.radiobuttons_with(:name => 'type')[0].check
+
+  # We need to set select list value to the first option:
+  add_page.form.field_with(name: 'Mood').options[0].select
+
+  # We need to upload file in form:
+  add_page.form.file_upload.file_name = "./#{path}/#{file_name}"
+  </tt>
 
   What we also need set of tables to represent one of these sites asthey have deferent fields and fields_names let's take example on yelp i created a table and gave it these fields 
   <tt>
@@ -39,9 +78,3 @@ I created a task called post_event in <tt>/lib/tasks/event.rake</tt> and i inclu
     t.datetime "updated_at",            null: false
   end
   </tt>
-
-```
-function test() {
-  console.log("notice the blank line before this function?");
-}
-```

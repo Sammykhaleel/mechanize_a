@@ -1,6 +1,6 @@
 Posting content to other website
 
-1. Basically first what we need a websites that's allow us to parse and post through their HTML in this case many sites i found they have     an API or they don't allow to submit forms because they are using JS and AJAX to submit the forms.
+1. Basically first what we need a websites that's allow us to parse and post through their HTML in this case many sites i found they have an API or they don't allow to submit forms because they are using popup and storing the data using JS and AJAX to submit the forms.
 
 2. For thus who allow HTML parsing i noticed each has deferent fields to fill in and some of these field require min and max character input such as description fields as with this rquirement we need to modify our tables/events according to that. for the site that require API probably we need to register as developer and take a look at the API to see how we can work with it. 
 

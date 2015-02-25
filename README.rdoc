@@ -17,7 +17,8 @@ Also make sure to run the command <tt>whenever .</tt> in the terminal to create 
 
 I created a task called post_event in <tt>/lib/tasks/event.rake</tt> and i included the following as an example using mechanize.
 
-<tt>require 'mechanize'
+<tt>
+require 'mechanize'
   require 'open-uri'
 
   agent = Mechanize.new
@@ -35,7 +36,7 @@ I created a task called post_event in <tt>/lib/tasks/event.rake</tt> and i inclu
 
   #here is an example of field to fill the venue name.
   agent.page.forms[0]["venue_name"] = "118st fitness_club"
-  
+
   #now we can submit the form
   home_page = form.submit
 
@@ -52,5 +53,6 @@ I created a task called post_event in <tt>/lib/tasks/event.rake</tt> and i inclu
   add_page.form.field_with(name: 'Mood').options[0].select
 
   # We need to upload file in form:
-  add_page.form.file_upload.file_name = "./#{path}/#{file_name}"</tt>
+  add_page.form.file_upload.file_name = "./#{path}/#{file_name}"
+  </tt>
 

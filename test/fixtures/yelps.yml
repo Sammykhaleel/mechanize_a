@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  starts_month_day_year: 2015-02-24 13:45:28
+  starts_time: 2015-02-24 13:45:28
+  ends_month_day_year: 2015-02-24 13:45:28
+  ends_time: 2015-02-24 13:45:28
+  venue_name: MyString
+  venue_street: MyString
+  venue_city_state_zip: MyString
+  event_site_url: MyString
+  tickets_url: MyString
+  cost: MyString
+  description: MyText
+  category: MyString
+
+two:
+  name: MyString
+  starts_month_day_year: 2015-02-24 13:45:28
+  starts_time: 2015-02-24 13:45:28
+  ends_month_day_year: 2015-02-24 13:45:28
+  ends_time: 2015-02-24 13:45:28
+  venue_name: MyString
+  venue_street: MyString
+  venue_city_state_zip: MyString
+  event_site_url: MyString
+  tickets_url: MyString
+  cost: MyString
+  description: MyText
+  category: MyString

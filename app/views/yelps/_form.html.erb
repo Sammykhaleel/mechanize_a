@@ -1,0 +1,69 @@
+<%= form_for(@yelp) do |f| %>
+  <% if @yelp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@yelp.errors.count, "error") %> prohibited this yelp from being saved:</h2>
+
+      <ul>
+      <% @yelp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :starts_month_day_year %><br>
+    <%= f.datetime_select :starts_month_day_year %>
+  </div>
+  <div class="field">
+    <%= f.label :starts_time %><br>
+    <%= f.datetime_select :starts_time %>
+  </div>
+  <div class="field">
+    <%= f.label :ends_month_day_year %><br>
+    <%= f.datetime_select :ends_month_day_year %>
+  </div>
+  <div class="field">
+    <%= f.label :ends_time %><br>
+    <%= f.datetime_select :ends_time %>
+  </div>
+  <div class="field">
+    <%= f.label :venue_name %><br>
+    <%= f.text_field :venue_name %>
+  </div>
+  <div class="field">
+    <%= f.label :venue_street %><br>
+    <%= f.text_field :venue_street %>
+  </div>
+  <div class="field">
+    <%= f.label :venue_city_state_zip %><br>
+    <%= f.text_field :venue_city_state_zip %>
+  </div>
+  <div class="field">
+    <%= f.label :event_site_url %><br>
+    <%= f.text_field :event_site_url %>
+  </div>
+  <div class="field">
+    <%= f.label :tickets_url %><br>
+    <%= f.text_field :tickets_url %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

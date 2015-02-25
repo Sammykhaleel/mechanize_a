@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @yelp.name %>
+</p>
+
+<p>
+  <strong>Starts month day year:</strong>
+  <%= @yelp.starts_month_day_year %>
+</p>
+
+<p>
+  <strong>Starts time:</strong>
+  <%= @yelp.starts_time %>
+</p>
+
+<p>
+  <strong>Ends month day year:</strong>
+  <%= @yelp.ends_month_day_year %>
+</p>
+
+<p>
+  <strong>Ends time:</strong>
+  <%= @yelp.ends_time %>
+</p>
+
+<p>
+  <strong>Venue name:</strong>
+  <%= @yelp.venue_name %>
+</p>
+
+<p>
+  <strong>Venue street:</strong>
+  <%= @yelp.venue_street %>
+</p>
+
+<p>
+  <strong>Venue city state zip:</strong>
+  <%= @yelp.venue_city_state_zip %>
+</p>
+
+<p>
+  <strong>Event site url:</strong>
+  <%= @yelp.event_site_url %>
+</p>
+
+<p>
+  <strong>Tickets url:</strong>
+  <%= @yelp.tickets_url %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @yelp.cost %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @yelp.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @yelp.category %>
+</p>
+
+<%= link_to 'Edit', edit_yelp_path(@yelp) %> |
+<%= link_to 'Back', yelps_path %>

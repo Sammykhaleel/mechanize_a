@@ -4,11 +4,11 @@ Posting content to other website
 
 2. For thus who allow HTML parsing i noticed each has deferent fields to fill in and some of these field require min and max character input such as description fields as with this rquirement we need to modify our tables/events according to that. for the site that require API probably we need to register as developer and take a look at the API to see how we can work with it. 
 
-3. I'm using Nokogiri for the parsing the HTML and Mechanize to login and post through ruby and the CSS selector to make more fun. 
+3. I'm using Nokogiri for the parsing the HTML and Mechanize to login and post through ruby and the CSS selector to make it more fun. 
 
 Tools and basic installation:
 
-In the Gimfile i installed the following
+In the Gemfile i installed the following
 <tt>gem 'whenever', :require => false</tt>
 </tt>gem 'mechanize'</tt>
 <tt>em 'nokogiri'</tt>
@@ -23,7 +23,7 @@ require 'mechanize'
 
   agent = Mechanize.new
 
-  #notice here we to call post on the agent to submit a post request we can use get for fetch data from the site
+  #notice here we to call get request to fetch data from the site
   agent.post("http://www.yelp.com/events/create")
 
   #once we
@@ -31,7 +31,8 @@ require 'mechanize'
   form.email = 'your_email'
   form.password = 'your_password'
 
-  # The "remember me" checkbox is called "rem" this come handy ecpiecally if we don't login every time the cron job try to to make a post request.
+  # The "remember me" checkbox is called "rem" this come handy ecpiecally if we don't 
+  # need to login every time the cron job try to to make a post request.
   form.checkbox_with('rem').check
 
   #here is an example of field to fill the venue name.

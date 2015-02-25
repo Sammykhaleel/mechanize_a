@@ -72,4 +72,11 @@ add_page.form.file_upload.file_name = "./#{path}/#{file_name}"
 What we also need set of tables to represent one of these sites asthey have deferent fields and fields_names let's take example on yelp i created a table and gave it these fields 
 
 name, starts_month_day_year, starts_time, ends_month_day_year, ends_time,venue_name, venue_street, venue_city_state_zip, event_site_url, tickets_url, cost, description and category.
+
+
+Now inside <tt>schedule.rb</tt> we can write this code to trigger cron job to update every one hour
+<tt>every 1.hours do
+  rake "post_event"
+end
+</tt>
  

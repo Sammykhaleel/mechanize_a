@@ -1,8 +1,8 @@
 Posting content to other website
 
-1. Basically first what we need a websites that's allow us to parse and post through their HTML in this case many sites i found they have an API or they don't allow to submit forms because they are using popup and storing the data using JS and AJAX to submit the forms.
+1. Basically first what we need is a websites that's allow us to parse and post through their HTML in this case many sites i found they have an API or they don't allow to submit forms because they are using popup and storing the data using JS and AJAX to submit the forms.
 
-2. For thus who allow HTML parsing i noticed each has deferent fields to fill in and some of these field require min and max character input such as description fields as with this rquirement we need to modify our tables/events according to that. for the site that require API probably we need to register as developer and take a look at the API to see how we can work with it. 
+2. For thus who allow HTML parsing i noticed each has deferent fields to fill in and some of these field require min and max character input such as description fields as with this requirement we need to modify our tables/events according to that. for the site that require API probably we need to register as developer and take a look at the API to see how we can work with it. 
 
 3. I'm using Nokogiri for the parsing the HTML and Mechanize to login and post through ruby and the CSS selector to make it more fun. 
 
@@ -25,46 +25,46 @@ I created a task called post_event in <tt>/lib/tasks/event.rake</tt> and i inclu
 
   agent = Mechanize.new
 
-#notice here we to call get request to fetch data from the site
+notice here we to call get request to fetch data from the site
 
   agent.post("http://www.yelp.com/events/create")
 
-#that will take us to the login page
+that will take us to the login page
 
   form = agent.page.forms.first
   form.email = 'your_email'
   form.password = 'your_password'
 
-# The "remember me" checkbox is called "rem" this come handy ecpiecally if we don't 
-# need to login every time the cron job try to to make a post request.
+ The "remember me" checkbox is called "rem" this come handy ecpiecally if we don't 
+ need to login every time the cron job try to to make a post request.
 
   form.checkbox_with('rem').check
 
-#here is an example of field to fill the venue name.
+here is an example of field to fill the venue name.
 
   agent.page.forms[0]["venue_name"] = "118st fitness_club"
 
-#now we can submit the form
+now we can submit the form
 
   home_page = form.submit
 
-# Navigating by links
+ Navigating by links
 
   add_page = home_page.link_with(text: 'Add photo').click
 
-# We need to check first check box check(), to uncheck uncheck():
+ We need to check first check box check(), to uncheck uncheck():
 
   add_page.form.checkbox_with.check
 
-# We need to check a first radio:
+ We need to check a first radio:
 
   add_page.form.radiobuttons_with(:name => 'type')[0].check
 
-# We need to set select list value to the first option:
+ We need to set select list value to the first option:
 
   add_page.form.field_with(name: 'Mood').options[0].select
 
-# We need to upload file in form:
+ We need to upload file in form:
 
   add_page.form.file_upload.file_name = "./#{path}/#{file_name}"
 

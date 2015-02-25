@@ -27,7 +27,7 @@ I created a task called post_event in <tt>/lib/tasks/event.rake</tt> and i inclu
 
 notice here we to call get request to fetch data from the site
 
-  agent.post("http://www.yelp.com/events/create")
+  agent.get("http://www.yelp.com/events/create")
 
 that will take us to the login page
 
@@ -35,8 +35,8 @@ that will take us to the login page
   form.email = 'your_email'
   form.password = 'your_password'
 
- The "remember me" checkbox is called "rem" this come handy ecpiecally if we don't 
- need to login every time the cron job try to to make a post request.
+The "remember me" checkbox is called "rem" this come handy ecpiecally if we don't 
+need to login every time the cron job try to to make a post request.
 
   form.checkbox_with('rem').check
 
